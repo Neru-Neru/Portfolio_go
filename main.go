@@ -13,11 +13,12 @@ import (
 type Work struct {
 	gorm.Model
 	Title   string    `json:"title"`
-	Image      int    `json:"image"`
+	Image   string    `json:"image"`
 	Url     string    `json:"url"`
 }
 
 func loadEnv() {
+	// .envファイル全体を読み込む関数
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
